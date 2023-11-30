@@ -8,12 +8,14 @@ use \Firebase\JWT\KEY;
 
 function decodeJWT ($jwt) {
 
-    $key = "secretpassword";  // chave secreta
+
+    $key = "596293a37dd27d83c19a7a888b61f06c3f17a6c3eb4b18c99c6a936f9d7271f1";  // chave secreta
 
     try {
 
         $decoded = JWT::decode($jwt, new Key($key, 'HS256'));
-        // print_r($decoded);
+
+        return $decoded;
     } 
     catch (\Exception $e) {
 
@@ -25,7 +27,8 @@ function decodeJWT ($jwt) {
 
 
 function isTokenExpired($token) {
-    $key = 'secretpassword'; // Sua chave secreta
+    
+    $key = "596293a37dd27d83c19a7a888b61f06c3f17a6c3eb4b18c99c6a936f9d7271f1"; // Sua chave secreta
 
     try {
         $decoded = JWT::decode($token, new Key($key, 'HS256'));
@@ -45,3 +48,4 @@ function isTokenExpired($token) {
         return true;
     }
 }
+
