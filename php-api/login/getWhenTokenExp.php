@@ -12,10 +12,10 @@ header('Access-Control-Allow-Headers: Content-Type');
 header("Content-Type: application/json");
 
 // Requerindo o arquivo que faz a conexão com o banco de dados
-require_once '../../../database/conn.php';
+require_once '../../database/conn.php';
 
 // Decoder de JWT
-require_once '../../../token/decodeJWT.php';
+require_once '../../token/decodeJWT.php';
 
 
 

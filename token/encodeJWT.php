@@ -1,6 +1,6 @@
 <?php
 
-require_once '../../../vendor/autoload.php';
+require_once '../../vendor/autoload.php';
 
 
 use \Firebase\JWT\JWT;
@@ -42,7 +42,7 @@ function encodeJWT ($data) {
         return $jwt;
     } 
     catch (Exception $e) {
-        
+
         // Lidar com a exceção (por exemplo, log, retornar uma resposta de erro, etc.)
         echo 'Erro ao gerar o token: ' . $e->getMessage();
         return null;

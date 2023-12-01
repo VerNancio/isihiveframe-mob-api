@@ -1,20 +1,20 @@
 <?php
 
-require_once '../../../vendor/autoload.php';
+require_once '../../vendor/autoload.php';
 
 use \Firebase\JWT\JWT;
 use \Firebase\JWT\KEY;
 
 
 function decodeJWT ($jwt) {
-
+    
 
     $key = "596293a37dd27d83c19a7a888b61f06c3f17a6c3eb4b18c99c6a936f9d7271f1";  // chave secreta
 
     try {
 
         $decoded = JWT::decode($jwt, new Key($key, 'HS256'));
-
+        
         return $decoded;
     } 
     catch (\Exception $e) {
@@ -27,7 +27,7 @@ function decodeJWT ($jwt) {
 
 
 function isTokenExpired($token) {
-    
+
     $key = "596293a37dd27d83c19a7a888b61f06c3f17a6c3eb4b18c99c6a936f9d7271f1"; // Sua chave secreta
 
     try {

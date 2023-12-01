@@ -11,10 +11,10 @@ header('Access-Control-Allow-Headers: Content-Type');
 // Tipo de conteúdo que é aceito no back-end
 header("Content-Type: application/json");
 
-require_once '../../../database/conn.php';
+require_once '../../database/conn.php';
 
 // Decoder de JWT
-require_once '../../../token/decodeJWT.php';
+require_once '../../token/decodeJWT.php';
 
 
 

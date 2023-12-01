@@ -5,10 +5,10 @@ header('Access-Control-Allow-Headers: Content-Type');
 
 
 // Buscando o arquivo do banco:
-require_once '../../../database/conn.php';
+require_once '../../database/conn.php';
 
 // Decoder de JWT
-require_once '../../../token/decodeJWT.php';
+require_once '../../token/decodeJWT.php';
 
 
 

@@ -12,10 +12,10 @@ header('Access-Control-Allow-Headers: Content-Type');
 header("Content-Type: application/json");
 
 // Buscando o arquivo do banco:
-require_once '../../../database/conn.php';
+require_once '../../database/conn.php';
 
 // Importando o criador do JWT:
-require_once '../../../token/encodeJWT.php';
+require_once '../../token/encodeJWT.php';
 
 
 
