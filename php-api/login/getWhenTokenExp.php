@@ -45,7 +45,7 @@ function getWhenTokenExp($token, $conn) {
     $response = [
         'status' => 'success',
         'mensagem' => 'Timestamp de expiração do token retornado',
-        'tokenExTimestamp' => $decodedJWT->exp
+        'tokenExpTimestamp' => $decodedJWT->exp
     ];
     
     echo json_encode($response);

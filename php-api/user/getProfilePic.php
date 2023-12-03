@@ -1,8 +1,15 @@
 <?php
+// Específica qual URL pode acessar
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET');
+
+// Especifica qual método http é aceito
+header('Access-Control-Allow-Methods: PUT');
+
+// Cabeçalhos que podem ser recebidos
 header('Access-Control-Allow-Headers: Content-Type');
 
+// Tipo de conteúdo que é aceito no back-end
+header("Content-Type: application/json");
 
 // Buscando o arquivo do banco:
 require_once '../../../database/conn.php';
@@ -94,9 +101,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         $row = $result->fetch_assoc();
 
-        // Definir os cabeçalhos para indicar que estamos enviando uma imagem
-        header("Content-Type: image/jpeg"); // Altere o tipo de imagem conforme necessário
-        echo $row['FotoDePerfil'];
+        $response = [
+            'status' => 'error',
+            'mensagem' => 'Nif do técnico não enviado na requisição',
+            'blobFoto' => $row['FotoDePerfil']
+        ];
 
     }
 } 
